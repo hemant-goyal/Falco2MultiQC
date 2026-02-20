@@ -11,6 +11,32 @@ This script acts as a bridge. It takes your Falco outputs, safely copies them, r
 
 ## 🚀 Usage
 
-**Make it executable:**
+### 1. Get the Tool (Do this once)
+Clone the repo and make the script executable so your system can run it.
+
 ```bash
+git clone [https://github.com/hemant-goyal/Falco2MultiQC.git](https://github.com/hemant-goyal/Falco2MultiQC.git)
+cd Falco2MultiQC
 chmod +x falco2multiqc.sh
+
+(Pro-tip: You can move this script to your ~/bin or add it to your $PATH so you can call it from anywhere without typing the full path!)
+
+**🍿 Option A: The "Lazy" Method (Easiest)**
+If your terminal is already sitting inside the folder full of your raw Falco results, just run the script blindly. It will automatically scan the current folder and build a new directory for you.
+
+# 1. Run the script (defaults to creating a folder called './multiqc_ready')
+/path/to/falco2multiqc.sh
+
+# 2. Fire up MultiQC on the newly created folder
+multiqc ./multiqc_ready
+
+**⚙️ Option B: The "Strict Pipeline" Method (Best for scripts/automation)**
+If you are writing a bash script or a Nextflow/Snakemake pipeline, you want to be explicit. Tell the wrapper exactly where the raw files are (-i) and where to put the fixed files (-o).
+# 1. Convert the files from Input (A) to Output (B)
+/path/to/falco2multiqc.sh -i /path/to/raw_falco_results -o /path/to/fixed_results
+
+# 2. Run MultiQC on the target directory
+multiqc /path/to/fixed_results
+
+
+
