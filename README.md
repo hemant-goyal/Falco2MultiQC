@@ -18,7 +18,9 @@ Clone the repository and make the script executable:
 
 ```bash
 git clone [https://github.com/hemant-goyal/Falco2MultiQC.git](https://github.com/hemant-goyal/Falco2MultiQC.git)
+
 cd Falco2MultiQC
+
 chmod +x falco2multiqc.sh
 ```
 
@@ -29,7 +31,8 @@ chmod +x falco2multiqc.sh
 If your terminal is already sitting inside the folder full of your raw Falco results, just run the script blindly. It will automatically scan the current folder and build a new directory for you.
 ```
 # 1. Run the script (defaults to creating a folder called './multiqc_ready')
-/path/to/falco2multiqc.sh   
+/path/to/falco2multiqc.sh
+
 # 2. Fire up MultiQC on the newly created folder
 multiqc ./multiqc_ready
 ```
@@ -38,11 +41,12 @@ If you are writing a bash script or a Nextflow/Snakemake pipeline, you want to b
 ```
 # 1. Convert the files from Input (A) to Output (B)
 /path/to/falco2multiqc.sh -i /path/to/raw_falco_results -o /path/to/fixed_results
+
 # 2. Run MultiQC on the target directory
 multiqc /path/to/fixed_results
 ```
 **📦 Dependencies**
-
-bash 👾
-
-perl 👾 (Standard on almost all Linux/macOS distributions)
+```
+  bash 👾
+  perl 👾 (Standard on almost all Linux/macOS distributions)
+```
