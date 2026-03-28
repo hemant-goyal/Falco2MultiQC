@@ -17,7 +17,7 @@ This script acts as a bridge. It takes your Falco outputs, safely copies them, r
 Clone the repository and make the script executable:
 
 ```bash
-git clone [https://github.com/hemant-goyal/Falco2MultiQC.git](https://github.com/hemant-goyal/Falco2MultiQC.git)
+git clone https://github.com/hemant-goyal/Falco2MultiQC.git
 
 cd Falco2MultiQC
 
